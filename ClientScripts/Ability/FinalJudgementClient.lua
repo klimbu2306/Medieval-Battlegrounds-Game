@@ -16,14 +16,14 @@ local LightningFX = Assets:WaitForChild("Lightning")
 local CRATER_PIECES = 17
 
 -- Root
-local LightningModule = {}
+local FinalJudgementClient = {}
 
 -- Functions
-function LightningModule.Removing(...)
+function FinalJudgementClient.Removing(...)
 	-- pass
 end
 
-function LightningModule.SummonBeam(JudgementLightOrigin: CFrame, LookVector: Vector3, i: number)
+function FinalJudgementClient.SummonBeam(JudgementLightOrigin: CFrame, LookVector: Vector3, i: number)
 	JudgementLightOrigin = JudgementLightOrigin + (LookVector * i * 15)
 
 	-- (1) Summon Judgement Ring Bolt VFX
@@ -77,7 +77,7 @@ function LightningModule.SummonBeam(JudgementLightOrigin: CFrame, LookVector: Ve
 	end
 end
 
-function LightningModule.Main(...)
+function FinalJudgementClient.Main(...)
 	local player, LightningId, LightningParams: {}, origin: CFrame = ...
 	
 	local JudgementLightOrigin: CFrame = LightningParams.JudgementLightOrigin
@@ -88,10 +88,10 @@ function LightningModule.Main(...)
 	
 	for i = 0, 4, 1 do
 		task.delay(i * 0.25, function()
-			LightningModule.SummonBeam(JudgementLightOrigin, origin.LookVector, i)
+			FinalJudgementClient.SummonBeam(JudgementLightOrigin, origin.LookVector, i)
 		end)
 	end	
 end
 
 
-return LightningModule
+return FinalJudgementClient

@@ -20,14 +20,14 @@ local PhysicsClient = ReplicatedStorage:WaitForChild("PhysicsClient")
 local EndLag = require(PhysicsClient:WaitForChild("EndLag"))
 
 -- Root
-local FireballModule = {}
+local VanguardRushModule = {}
 
 -- Variables
 local LIFE_TIME = 4
 local SPEED = 30
 
 -- Functions
-function FireballModule.Main(player: Player, properties: {})
+function VanguardRushModule.Main(player: Player, properties: {})
 	--[[
 	[PROPERTIES]
 	> Origin: CFrame
@@ -144,4 +144,4 @@ function FireballModule.Main(player: Player, properties: {})
 	end)
 end
 
-return FireballModule
+return VanguardRushModule

@@ -16,14 +16,14 @@ local ShadowStepFX = Assets:WaitForChild("ShadowStep")
 local CRATER_PIECES = 17
 
 -- Root
-local RoyalGuard = {}
+local DirtyTrickClient = {}
 
 -- Functions
-function RoyalGuard.Removing(...)
+function DirtyTrickClient.Removing(...)
 	-- pass
 end
 
-function RoyalGuard.Swing(model: Model)
+function DirtyTrickClient.Swing(model: Model)
 	local humanoid: Humanoid = model:FindFirstChild("Humanoid")
 	local animator: Animator = humanoid:FindFirstChild("Animator")
 	
@@ -31,19 +31,19 @@ function RoyalGuard.Swing(model: Model)
 	animation:Play()
 end
 
-function RoyalGuard.Main(...)
-	local player, RoyalGuardId, RoyalGuardParams: {}, origin: CFrame = ...
+function DirtyTrickClient.Main(...)
+	local player, DirtyTrickClientId, DirtyTrickClientParams: {}, origin: CFrame = ...
 	
-	local RoyalGuardCFrame: CFrame = origin + origin.LookVector * 10
-	RoyalGuardCFrame *= CFrame.Angles(0, math.rad(180), 0)
+	local DirtyTrickClientCFrame: CFrame = origin + origin.LookVector * 10
+	DirtyTrickClientCFrame *= CFrame.Angles(0, math.rad(180), 0)
 	
 	-- (1) Leave an After-Image FX behind
 	local Clone = script.Devil:Clone()
-	Clone:SetPrimaryPartCFrame(RoyalGuardCFrame)
+	Clone:SetPrimaryPartCFrame(DirtyTrickClientCFrame)
 	Clone.Parent = workspace.FX
 	Debris:AddItem(Clone, 2)
 	
-	RoyalGuard.Swing(Clone)
+	DirtyTrickClient.Swing(Clone)
 	
 	-- (2) Play Shadow Step SFX
 	local Speaker = Instance.new("Part")
@@ -62,4 +62,4 @@ function RoyalGuard.Main(...)
 	HealSFX:Play()
 	Debris:AddItem(HealSFX, 1)
 end
-	return RoyalGuard
+	return DirtyTrickClient

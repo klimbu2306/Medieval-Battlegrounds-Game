@@ -1,2 +1,3 @@
 # Medieval-Battlegrounds-Game
-A medieval battlegrounds game.
+## 3D Action-oriented Battlegrounds game
+This is a 3D battlegrounds game developed using modular programming. 

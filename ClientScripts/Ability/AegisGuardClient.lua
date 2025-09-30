@@ -16,10 +16,10 @@ local LightningFX = Assets:WaitForChild("Lightning")
 local CRATER_PIECES = 17
 
 -- Root
-local Trail = {}
+local AegisGuardClient = {}
 
 -- Functions
-function Trail.Raycast(origin: CFrame): RaycastResult
+function AegisGuardClient.Raycast(origin: CFrame): RaycastResult
 	local raycastParams = RaycastParams.new()
 	raycastParams.FilterType = Enum.RaycastFilterType.Include
 	raycastParams.FilterDescendantsInstances = {workspace.Map}
@@ -31,11 +31,11 @@ function Trail.Raycast(origin: CFrame): RaycastResult
 	return Result
 end
 
-function Trail.Removing(...)
+function AegisGuardClient.Removing(...)
 	-- pass
 end
 
-function Trail.Main(...)
+function AegisGuardClient.Main(...)
 	local player, healId, HealingParams: {}, origin: CFrame = ...
 	
 	local LIFE_TIME = 2
@@ -114,4 +114,4 @@ function Trail.Main(...)
 end
 
 
-return Trail
+return AegisGuardClient

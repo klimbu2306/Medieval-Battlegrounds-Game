@@ -27,7 +27,7 @@ _Meanwhile, a boolean variable will likely result in a race-time condition_ sinc
 
 The solution is to sacrifice space complexity and to represent a state as a **Queue** data structure that dequeues using parallel threads.
 
-If any new writer activates a state again, it is logically guaranteed that their state change will never be intersected / interrupted by an old writer as the data structure we use implicitly prevents overwriting new writers.
+If any new writer activates a state again, it is logically guaranteed that their state change will never be intersected / interrupted by an old writer as the data structure we use implicitly prevents interrupting new changes.
 
 ### 2. 🧮 "Raycast Hitboxing + Ability VFX"
 - `ClientScripts.Ability` <-> `ServerScripts.Abilities`

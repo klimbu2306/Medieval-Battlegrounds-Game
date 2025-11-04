@@ -25,9 +25,9 @@ The reason **why** I am using a system to track state like this, instead of usin
 
 - (2) A player may be `stunned` whilst they are already in a `stunned` state
 
-_If I used a boolean variable to track this `stunned` state then it would likely result in a race-time condition_!
+_If I used a boolean variable to track this `stunned` state then it would likely result in a race-time condition_
 
-![<img src="Media/queue_explanation.png" alt="Queue Explanation" width="50"/>](https://github.com/klimbu2306/Medieval-Battlegrounds-Game/blob/fee404c8ac1f87620b9d50ed9a3f02c5cf61d84f/Media/queue%20diagram.png)
+![<img src="Media/queue_diagram2.png" alt="Queue Explanation" width="50"/>](https://github.com/klimbu2306/Medieval-Battlegrounds-Game/blob/c14ab1a1a0cdd7e9a6825de7a5c88c84ac411d4e/Media/queue_diagram2.png)
 
 The solution is to represent a state as a **Queue** data structure that dequeues using parallel threads.
 

@@ -24,7 +24,7 @@ This is made clearer through naming conventions like:
 
 Typically, `ServerScripts` are executed first, before their `ClientScripts` equivalents are executed!
 
-(More information can be found within the documentation!)
+_(More information can be found within the documentation!)_
 
 ### 🖼️ Media Assets
 ---

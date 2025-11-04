@@ -32,6 +32,6 @@ Additionally, an `Assets` folder has been included for the UI / UX and 3D Assets
 
 _(All character models have been developed by me, using Blender, and are free to use! However, other 3D assets / 2D UI icons have been developed by other people, so please double-check when trying to use them!)_
 
-### 🔗 Extra Links 
+### 🔗 Link to Game 
 ---
-https://www.roblox.com/games/113484232000779/Medieval-Era-Tycoon#!/about _(Link to Website)_
+https://www.roblox.com/games/113484232000779/Medieval-Era-Tycoon#!/about

@@ -25,7 +25,7 @@ The issue is that in many systems, _this can result in race time condition error
 
 With a boolean variable, shared-state or private, you _risk the aforementioned racetime condition error_ if your system messes up preventing multiple people from being able to overwrite the variable when they aren't supposed to!
 
-The fix is to use a Queue data structure, which is where `ServerScripts.Abilities` comes into play. 
+The fix is to sacrifice space complexity and use a **Queue** data structure, which is where `ServerScripts.Abilities` comes into play. 
 
 `ServerScripts.Abilities` verifies whether a player is able to use a certain spell or use a given commands **given that there exists no markers within their `Stunned` queue!**
 

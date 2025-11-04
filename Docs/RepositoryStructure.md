@@ -27,7 +27,9 @@ The reason **why** I am using a system to track state like this, instead of usin
 
 _If I used a boolean variable to track this `stunned` state then it would likely result in a race-time condition_
 
-![<img src="Media/queue_diagram2.png" alt="Queue Explanation" width="50"/>](https://github.com/klimbu2306/Medieval-Battlegrounds-Game/blob/c14ab1a1a0cdd7e9a6825de7a5c88c84ac411d4e/Media/queue_diagram2.png)
+<p align="center">
+  <img src="../Media/queue_diagram3.png" alt="Queue Explanation" width="500"/>
+</p>
 
 The solution is to represent a state as a **Queue** data structure that dequeues using parallel threads.
 

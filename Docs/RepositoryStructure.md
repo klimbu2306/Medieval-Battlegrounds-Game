@@ -12,5 +12,3 @@ This document will now provide examples of how modules were intended to interact
 
 ### 1. 🔥 "Abilities"
 - `ClientScripts.Ability` and `ServerScripts.Abilities`
-
-### 2. 

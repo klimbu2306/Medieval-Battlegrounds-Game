@@ -35,4 +35,4 @@ _(All character models have been developed by me, using Blender, and are free to
 
 ### 🔗 Game Link
 ---
-https://www.roblox.com/games/113484232000779/Medieval-Era-Tycoon#!/about
+- https://www.roblox.com/games/113484232000779/Medieval-Era-Tycoon#!/about

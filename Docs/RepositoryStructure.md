@@ -13,7 +13,11 @@ This document will now provide examples of how modules were intended to interact
 ### 1. 🧮 "Raycast Hitboxing + Ability VFX"
 - `ClientScripts.Ability` <-> `ServerScripts.Abilities`
 
-`ServerScripts.Abilities` and `ClientScripts.Ability` modules work _synchronously_ to make sure the end-user is able to experience spells and attacks that make use of VFX properly, with  `ServerScripts` handling collision detection every frame using Raycasting and `ClientScripts` generated VFX like fireballs.
+`ServerScripts.Abilities` and `ClientScripts.Ability` modules work _synchronously_ to make sure the end-user is able to experience spells and attacks that make use of VFX properly.
+
+For example, `ServerScripts.Fireball.luau` handles collision detection every frame using Raycasting + LERP'ing and `ClientScripts.FireballClient.luau` animates a fireball VFX using LERP'ing. 
+
+Due to the fact that **both the Server and Client modules use LERP'ing algorithms**, their LERP'ing of the hitbox and VFX can be synchronised to make attacks and spells seem accurately responsive. 
 
 ### 2. 🔐 "Finite State Management + Server Validation"
 - `ServerScripts.Physics` <-> `ServerScripts.Abilities`

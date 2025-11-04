@@ -11,4 +11,6 @@ Inside the repo, instead of a `src` folder, there are two main branching `src` f
 
 Within `ServerScripts` and `ClientScripts` there are further _sub-directories_ that contain modules - and **importing this repo requires that you place code in the exact directories that have been specified!**
 
+### 🖼️ Media Assets
+---
 Additionally, an `Assets` folder has been included for the UI / UX and 3D Assets used within the game

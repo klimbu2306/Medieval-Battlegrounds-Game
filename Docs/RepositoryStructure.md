@@ -48,3 +48,5 @@ Due to the fact that **both the Server and Client modules use LERP'ing algorithm
 - `ClientScripts.Ability` <-> `ClientScripts.FX`
 
 `CLientScripts.FX` is used to generate generic VFX like craters, explosions and etc... and returns the created instance so that it can be utilised by `ClientScripts.Ability`
+
+This library is mainly to mainly to ensure that D.R.Y is followed in the code.

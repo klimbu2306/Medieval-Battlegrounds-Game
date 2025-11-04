@@ -1,4 +1,4 @@
-# Medieval-Battlegrounds-Game
+# 🧙‍♂️ Medieval-Battlegrounds-Game
 **"Medieval Era Battlegrounds"** is a 3D videogame I developed as a passion project during my gap year. 
 
 ### 🖥️ Repository Structure Explanation

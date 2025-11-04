@@ -1,5 +1,5 @@
 # 🐉 Medieval Era Battleground (Open-Source Project)
-**"Medieval Era Battlegrounds"** is a 3D videogame I developed as a passion project during my gap year. 
+**"Medieval Era Battlegrounds"** is a 3D videogame I developed as a passion project during my gap year.
 
 ### 🖥️ Repository Structure Overview
 ---

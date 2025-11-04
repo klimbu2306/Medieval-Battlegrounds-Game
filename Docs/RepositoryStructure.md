@@ -10,5 +10,8 @@ This document will now provide examples of how modules were intended to interact
 
 ---
 
-### 1. 🔥 "Abilities"
-- `ClientScripts.Ability` and `ServerScripts.Abilities`
+### 1. 🧮 "Raycast Hitboxing + Ability VFX"
+- `ClientScripts.Ability` <-> `ServerScripts.Abilities`
+
+### 2. 🔐 "Finite State Management + Server Validation"
+- `ServerScripts.Physics` <-> `ServerScripts.Abilities`

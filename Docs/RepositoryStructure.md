@@ -42,4 +42,4 @@ If any new writer activates a state again, it is logically guaranteed that their
 
 For example, `ServerScripts.Fireball.luau` handles collision detection every frame using Raycasting + LERP'ing and `ClientScripts.FireballClient.luau` animates a fireball VFX using LERP'ing. 
 
-Due to the fact that **both the Server and Client modules use LERP'ing algorithms**, the LERP'ing of the spell hitboxes and VFX can be synchronised to make attacks and spells seem accurately responsive. 
+Due to the fact that **both the Server and Client modules use LERP'ing algorithms**, the LERP'ing of the spell hitboxes and VFX can be synchronised by making their LERP speeds uniform, making attacks and spells seem accurately responsive. 

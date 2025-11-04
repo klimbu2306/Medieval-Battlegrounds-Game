@@ -1,5 +1,5 @@
 # Medieval-Battlegrounds-Game
-This is a 3D battlegrounds game I developed as a passion project.
+**"Medieval Era Battlegrounds"** is a 3D videogame I developed as a passion project during my gap year. 
 
 ### 🖥️ Repository Structure Explanation
 ---

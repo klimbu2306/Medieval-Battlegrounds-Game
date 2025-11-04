@@ -24,6 +24,8 @@ This is made clearer through naming conventions like:
 
 Typically, `ServerScripts` are executed first, before their `ClientScripts` equivalents are executed!
 
+(More information can be found within the documentation!)
+
 ### 🖼️ Media Assets
 ---
 Additionally, an `Assets` folder has been included for the UI / UX and 3D Assets used within the game.

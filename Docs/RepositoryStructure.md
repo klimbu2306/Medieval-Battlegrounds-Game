@@ -13,5 +13,7 @@ This document will now provide examples of how modules were intended to interact
 ### 1. 🧮 "Raycast Hitboxing + Ability VFX"
 - `ClientScripts.Ability` <-> `ServerScripts.Abilities`
 
+`ServerScripts.Abilities` and `ClientScripts.Ability` modules work _synchronously_ to make sure the end-user is able to percieve VFX attacks properly.
+
 ### 2. 🔐 "Finite State Management + Server Validation"
 - `ServerScripts.Physics` <-> `ServerScripts.Abilities`

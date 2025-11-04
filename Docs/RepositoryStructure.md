@@ -20,16 +20,18 @@ However, in order to do this, the state of the player must be **accurately** man
 For example, `ServerScripts.Physics.Stun.luau` is a system used to tag a player with a `Stunned` marker, which has a parallel thread that removes it after a certain given amount of time. 
 
 The reason **why** I am using a system to track state like this, instead of using a single-state boolean variable is because: 
-(1) Any player's state is always in **shared state** (because any other player can attack them to change their `stunned` state) 
-(2) A player may be `stunned` whilst they are already in a `stunned` state
 
-_Meanwhile, a boolean variable will likely result in a race-time condition_ since an algorithm to prevent invalid modifications / state changes is almost never perfect: there's always an edge case!
+- (1) Any player's state is always in **shared state** (because any other player can attack them to change their `stunned` state) 
+
+- (2) A player may be `stunned` whilst they are already in a `stunned` state
+
+_If I used a boolean variable to track this `stunned` state then it would likely result in a race-time condition_!
 
 ![<img src="Media/queue_explanation.png" alt="Queue Explanation" width="50"/>](https://github.com/klimbu2306/Medieval-Battlegrounds-Game/blob/fee404c8ac1f87620b9d50ed9a3f02c5cf61d84f/Media/queue%20diagram.png)
 
-The solution is to sacrifice space complexity and to represent a state as a **Queue** data structure that dequeues using parallel threads.
+The solution is to represent a state as a **Queue** data structure that dequeues using parallel threads.
 
-If any new writer activates a state again, it is logically guaranteed that their state change will never be intersected / interrupted by an old writer as the data structure we use implicitly prevents interrupting new changes.
+If any new writer activates a state again, it is logically guaranteed that their state change will never be intersected / interrupted by an old writer as the data structure we use maps True / False to whether the Queue is empty or not.
 
 ### 2. 🧮 "Raycast Hitboxing + Ability VFX"
 - `ClientScripts.Ability` <-> `ServerScripts.Abilities`

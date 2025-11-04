@@ -1,4 +1,4 @@
-er## 🐉⚙️ Docx #1: Repository Structure!
+## 🐉⚙️ Docx #1: Repository Structure!
 ### 📝 Preface
 Please view the `README.md` file before reading this documentation, as it will give you a brief introduction to this document's contents. 
 

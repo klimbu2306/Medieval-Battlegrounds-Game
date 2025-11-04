@@ -27,10 +27,6 @@ The reason **why** I am using a system to track state like this, instead of usin
 
 _If I used a boolean variable to track this `stunned` state then it would likely result in a race-time condition_
 
-<p align="center">
-  <img src="../Media/queue_diagram3.png" alt="Queue Explanation" width="500"/>
-</p>
-
 The solution is to represent a state as a **Queue** data structure that dequeues using parallel threads.
 
 If any new writer activates a state again, it is logically guaranteed that their state change will never be intersected / interrupted by an old writer as the data structure we use maps True / False to whether the Queue is empty or not.

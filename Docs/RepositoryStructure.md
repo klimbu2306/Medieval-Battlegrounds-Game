@@ -19,7 +19,9 @@ However, in order to do this, the state of the player must be **accurately** man
 
 For example, `ServerScripts.Physics.Stun.luau` is a system used to tag a player with a `Stunned` marker, which has a parallel thread that removes it after a certain given amount of time. 
 
-The reason **why** I am using a system to track state like this, instead of using a single-state boolean variable is because any player's state is always in shared state as any other player can attack them, adding the `Stunned` marker to them. 
+The reason **why** I am using a system to track state like this, instead of using a single-state boolean variable is because: 
+(1) Any player's state is always in **shared state** (because any other player can attack them to change their `stunned` state) 
+(2) A player may be `stunned` whilst they are already in a `stunned` state
 
 _Meanwhile, a boolean variable will likely result in a race-time condition_ since an algorithm to prevent invalid modifications / state changes is almost never perfect: there's always an edge case!
 

@@ -19,17 +19,15 @@ However, in order to do this, the state of the player must be **accurately** man
 
 For example, `ServerScripts.Physics.Stun.luau` is a system used to tag a player with a `Stunned` marker, which has a parallel thread that removes it after a certain given amount of time. 
 
-The system allows for any given player to be _tagged multiple times_, since the player's state is technically in shared state as any other player can attack them, adding the `Stunned` marker to them. 
+The reason **why** I am using a system to track state like this, instead of using a single-state boolean variable is because any player's state is always in shared state as any other player can attack them, adding the `Stunned` marker to them. 
 
-The issue is that in many systems, _this can result in race time condition errors_ if we were to use a single shared-state boolean variable to track the player's `Stunned` state. 
-
-With a boolean variable, shared-state or private, you _risk the aforementioned racetime condition error_ if your system messes up preventing multiple people from being able to overwrite the variable when they aren't supposed to!
+_Meanwhile, a boolean variable will likely result in a race-time condition_ since an algorithm to prevent invalid modifications / state changes is almost never perfect: there's always an edge case!
 
 ![<img src="Media/queue_explanation.png" alt="Queue Explanation" width="50"/>](https://github.com/klimbu2306/Medieval-Battlegrounds-Game/blob/fee404c8ac1f87620b9d50ed9a3f02c5cf61d84f/Media/queue%20diagram.png)
 
-The fix is to sacrifice space complexity and use a **Queue** data structure, which is where `ServerScripts.Abilities` intersects with `ServerScripts.Physics` by having it's verification system revolve around *checking whether a state queue is empty to verify whether a player is in a given state or not*
+The solution is to sacrifice space complexity and to represent a state as a **Queue** data structure that dequeues using parallel threads.
 
-Essentially, if `ServerScript.Abilities` wanted to validate whether a player could use a spell, they would make sure that every state that disqualifies them from using that spell has an empty queue.
+If any new writer activates a state again, it is logically guaranteed that their state change will never be intersected / interrupted by an old writer as the data structure we use implicitly prevents overwriting new writers.
 
 ### 2. 🧮 "Raycast Hitboxing + Ability VFX"
 - `ClientScripts.Ability` <-> `ServerScripts.Abilities`

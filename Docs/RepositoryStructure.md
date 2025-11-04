@@ -25,11 +25,11 @@ The issue is that in many systems, _this can result in race time condition error
 
 With a boolean variable, shared-state or private, you _risk the aforementioned racetime condition error_ if your system messes up preventing multiple people from being able to overwrite the variable when they aren't supposed to!
 
-<img src="Media/queue_explanation.png" alt="Queue Explanation" width="200"/>
+![<img src="Media/queue_explanation.png" alt="Queue Explanation" width="50"/>](https://github.com/klimbu2306/Medieval-Battlegrounds-Game/blob/fee404c8ac1f87620b9d50ed9a3f02c5cf61d84f/Media/queue%20diagram.png)
 
-The fix is to sacrifice space complexity and use a **Queue** data structure, which is where `ServerScripts.Abilities` comes into play. 
+The fix is to sacrifice space complexity and use a **Queue** data structure, which is where `ServerScripts.Abilities` intersects with `ServerScripts.Physics` by having it's verification system revolve around *checking whether a state queue is empty to verify whether a player is in a given state or not*
 
-`ServerScripts.Abilities` verifies whether a player is able to use a certain spell or use a given commands **given that there exists no markers within their `Stunned` queue!**
+Essentially, if `ServerScript.Abilities` wanted to validate whether a player could use a spell, they would make sure that every state that disqualifies them from using that spell has an empty queue.
 
 ### 2. 🧮 "Raycast Hitboxing + Ability VFX"
 - `ClientScripts.Ability` <-> `ServerScripts.Abilities`

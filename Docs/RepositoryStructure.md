@@ -27,7 +27,7 @@ The reason **why** I am using a system to track state like this, instead of usin
 
 _If I used a boolean variable to track this `stunned` state then it would likely result in a race-time condition_
 
-![alt text](Media/state-diagram-piecewise-diagram.jpg)
+![alt text](Media/state-diagram-piecewise-diagram2.jpg)
 ![alt text](Media/state-management-diagram.jpg)
 
 The solution is to represent a state as a **Set** data type that dequeues using parallel threads.

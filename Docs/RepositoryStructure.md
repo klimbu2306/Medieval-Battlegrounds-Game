@@ -27,10 +27,10 @@ The reason **why** I am using a system to track state like this, instead of usin
 
 _If I used a boolean variable to track this `stunned` state then it would likely result in a race-time condition_
 
+Therefore, the solution is to represent a Boolean state as a **Set** data-type that dequeues using parallel threads.
+
 ![alt text](Media/state-diagram-piecewise-diagram2.jpg)
 ![alt text](Media/state-management-diagram.jpg)
-
-The solution is to represent a state as a **Set** data type that dequeues using parallel threads.
 
 If any new writer activates a state again, it is logically guaranteed that their state change will never be intersected / interrupted by an old writer as the data structure we use maps True / False to whether the set is empty or not.
 

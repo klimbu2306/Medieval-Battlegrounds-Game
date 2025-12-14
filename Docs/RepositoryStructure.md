@@ -27,9 +27,9 @@ The reason **why** I am using a system to track state like this, instead of usin
 
 _If I used a boolean variable to track this `stunned` state then it would likely result in a race-time condition_
 
-The solution is to represent a state as a **Queue** data structure that dequeues using parallel threads.
+The solution is to represent a state as a **Set** data type that dequeues using parallel threads.
 
-If any new writer activates a state again, it is logically guaranteed that their state change will never be intersected / interrupted by an old writer as the data structure we use maps True / False to whether the Queue is empty or not.
+If any new writer activates a state again, it is logically guaranteed that their state change will never be intersected / interrupted by an old writer as the data structure we use maps True / False to whether the set is empty or not.
 
 ### 2. 🧮 "Raycast Hitboxing + Ability VFX"
 - `ClientScripts.Ability` <-> `ServerScripts.Abilities`
